@@ -100,3 +100,27 @@ table td {
   background: #ffffff;
   border-radius: 3px;
 }
+/* Right-column empty cell to force left-only rows in the 2-col grid */
+.spacer {
+  /* empty on purpose */
+}
+
+/* Required asterisk */
+.req-asterisk {
+  color: #c00000;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* Attention highlight */
+.attention {
+  background: #fff7cc;           /* soft yellow */
+  border: 1px solid #e6c200;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+/* Keep spacing consistent when we add padding/border */
+.two-column > div.attention {
+  box-sizing: border-box;
+}
