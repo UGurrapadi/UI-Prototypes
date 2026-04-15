@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <label for="expirationDate">Expiration Date</label>
-                    <input type="date" id="expirationDate">
+                    <input type="date" id="expirationDate" readonly>
                 </div>
                 <div>
                       <label for="termFactor">Term Factor</label>
@@ -57,6 +57,7 @@
                     <label for="writingCompany">Writing Company</label>
                     <input type="text" id="writingCompany" value="Occidental Fire & Casualty Company of North Carolina" readonly>
                 </div>
+                <!-- IAT Renewal on its own row (left), right column blank -->
                 <div>
                     <label for="iatRenewal">IAT Renewal?</label>
                     <select id="iatRenewal">
@@ -64,10 +65,14 @@
                         <option value="yes">Yes</option>
                     </select>
                 </div>
+                <div class="spacer"></div>
+                <!-- Agency on its own row (left), right column blank -->
                 <div>
                     <label for="Agency">Agency</label>
                     <input type="text" id="Agency" value="USG Insurance Services Inc - Canonsburg" readonly>
                 </div>
+                <div class="spacer"></div>
+                
                 <div>
                     <label for="iatproduct">IAT Product</label>
                     <input type="text" id="iatproduct" value="Occidental Truck" readonly>
@@ -78,15 +83,18 @@
                         <option value="Package" selected>Package</option>
                     </select>
                 </div>
-                <div>
-                    <label for="uwReviewFlag">Flag policy for an UW review on next renewal?</label>
-                    <select id="uwReviewFlag">
-                        <option value="no" selected>No</option>
-                        <option value="yes">Yes</option>
-                    </select>
+                <div id="uwReviewRow">
+                  <label for="uwReviewFlag">Flag policy for an UW review on next renewal?</label>
+                  <select id="uwReviewFlag">
+                    <option value="no" selected>No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
                 </div>
                 <div id="justificationRow" style="display: none;">
-                    <label for="justification">Justification</label>
+                    <label for="justification">
+                          Justification <span id="justificationAsterisk" class="req-asterisk" style="display:none">*</span>
+                    </label>
                     <select id="justification">
                         <option value="">Select...</option>
                         <option value="Pricing">Pricing</option>
