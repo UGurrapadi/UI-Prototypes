@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #1b1f24;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #e9edf2;
+  border-bottom: 1px solid #cfd7df;
+}
+
+.tab-bar button {
+  border: 1px solid #cfd7df;
+  background: #f7f9fb;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  cursor: default;
+}
+
+.tab-bar button.selected {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px 14px;
+}
+
+.card {
+  background: #fff;
+  margin: 10px 14px;
+  border: 1px solid #cfd7df;
+  border-radius: 2px;
+}
+
+.card h2 {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 12px;
+  background: #e8f0fa;
+  border-bottom: 1px solid #cfd7df;
+}
+
+form {
+  padding: 12px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 320px 320px;
+  gap: 12px 22px;
+  align-items: end;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 4px;
+  color: #3a4149;
+}
+
+input, select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #b9c3cd;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 10px 12px;
+  border-top: 1px solid #e2e7ee;
+  font-size: 12px;
+}
+
+.footer {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+.footer button {
+  padding: 8px 14px;
+  border: 1px solid #b9c3cd;
+  background: #ffffff;
+  border-radius: 3px;
+}
