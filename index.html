@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>UI Prototype</title>
+</head>
+<body>
+    <div class="tab-bar">
+        <button>Account</button>
+        <button>Account Details</button>
+        <button class="selected">Policy Info</button>
+        <button>Pricing</button>
+        <button>Payment Details</button>
+        <button>Installment Schedule</button>
+        <button>Actuarial Factors</button>
+        <button>Risk Analysis</button>
+        <button>Pricing Analysis</button>
+    </div>
+    <h1>View Policy (QA Test CPP...)</h1>
+    <div class="card">
+        <h2>General Policy Information</h2>
+        <form>
+            <div class="two-column">
+                <div>
+                    <label for="primaryRatingState">Primary Rating State</label>
+                    <input type="text" id="primaryRatingState">
+                </div>
+                <div>
+                    <label for="quoteDescription">Quote Description</label>
+                    <input type="text" id="quoteDescription">
+                </div>
+                <div>
+                    <label for="effectiveDate">Effective Date</label>
+                    <input type="date" id="effectiveDate">
+                </div>
+                <div>
+                    <label for="term">Term</label>
+                    <input type="text" id="term">
+                </div>
+                <div>
+                    <label for="expirationDate">Expiration Date</label>
+                    <input type="date" id="expirationDate">
+                </div>
+                <div>
+                    <label for="termFactor">Term Factor</label>
+                    <input type="text" id="termFactor">
+                </div>
+                <div>
+                    <label for="writingCompany">Writing Company</label>
+                    <input type="text" id="writingCompany">
+                </div>
+                <div>
+                    <label for="iatRenewal">IAT Renewal?</label>
+                    <select id="iatRenewal">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="uwReviewFlag">Do you want to flag this policy for an UW review on next renewal?</label>
+                    <select id="uwReviewFlag">
+                        <option value="no" selected>No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div id="justificationRow" style="display: none;">
+                    <label for="justification">Justification</label>
+                    <select id="justification">
+                        <option value="">Select...</option>
+                        <option value="Pricing">Pricing</option>
+                        <option value="Risk Appetite">Risk Appetite</option>
+                        <option value="Agency Management">Agency Management</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card">
+        <h2>Choose the appropriate Line of Business</h2>
+        <table>
+            <tr>
+                <td><input type="checkbox"> Commercial Automobile</td>
+                <td><button>Detail</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> General Liability</td>
+                <td><button>Detail</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> Inland Marine</td>
+                <td><button>Detail</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <button>Previous</button>
+        <button>Next</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
