@@ -25,7 +25,10 @@
             <div class="two-column">
                 <div>
                     <label for="primaryRatingState">Primary Rating State</label>
-                    <input type="text" id="primaryRatingState">
+                     <select id="primaryRatingState">
+                        <option value="AZ">AZ</option>
+                        <option value="CA">CA</option>
+                    </select>
                 </div>
                 <div>
                     <label for="quoteDescription">Quote Description</label>
@@ -37,19 +40,22 @@
                 </div>
                 <div>
                     <label for="term">Term</label>
-                    <input type="text" id="term">
+                     <select id="term">
+                        <option value="1Yr">1 Year</option>
+                        <option value="custom">Custom</option>
+                    </select>
                 </div>
                 <div>
                     <label for="expirationDate">Expiration Date</label>
                     <input type="date" id="expirationDate">
                 </div>
                 <div>
-                    <label for="termFactor">Term Factor</label>
-                    <input type="text" id="termFactor">
+                      <label for="termFactor">Term Factor</label>
+                      <input type="text" id="termFactor" value="1.000" readonly>    
                 </div>
                 <div>
                     <label for="writingCompany">Writing Company</label>
-                    <input type="text" id="writingCompany">
+                    <input type="text" id="writingCompany" value="Occidental Fire & Casualty Company of North Carolina" readonly>
                 </div>
                 <div>
                     <label for="iatRenewal">IAT Renewal?</label>
@@ -59,7 +65,21 @@
                     </select>
                 </div>
                 <div>
-                    <label for="uwReviewFlag">Do you want to flag this policy for an UW review on next renewal?</label>
+                    <label for="Agency">Agency</label>
+                    <input type="text" id="Agency" value="USG Insurance Services Inc - Canonsburg" readonly>
+                </div>
+                <div>
+                    <label for="iatproduct">IAT Product</label>
+                    <input type="text" id="iatproduct" value="Occidental Truck" readonly>
+                </div>
+                <div>
+                    <label for="LineofBusiness">Line of Business</label>
+                     <select id="LineofBusiness">
+                        <option value="Package" selected>Package</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="uwReviewFlag">Flag policy for an UW review on next renewal?</label>
                     <select id="uwReviewFlag">
                         <option value="no" selected>No</option>
                         <option value="yes">Yes</option>
