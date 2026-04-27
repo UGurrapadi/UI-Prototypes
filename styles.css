@@ -105,6 +105,32 @@ table td {
   /* empty on purpose */
 }
 
+/* Inline label + value/checkbox side by side within a grid cell */
+.inline-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.inline-field label {
+  display: inline;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.field-value {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Prevent checkboxes from stretching to full width */
+input[type="checkbox"] {
+  width: auto;
+  flex-shrink: 0;
+}
+
 /* Required asterisk */
 .req-asterisk {
   color: #c00000;
