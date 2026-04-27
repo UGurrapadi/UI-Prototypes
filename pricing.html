@@ -82,7 +82,7 @@
           <span class="p-ro-val">$15,003.00</span>
         </div>
         <div class="p-inline-cell">
-          <label>Honor Current Rates?</label>
+          <label for="honorCurrentRates">Honor Current Rates?</label>
           <span class="p-check-row">
             <input type="checkbox" id="honorCurrentRates">
             <button class="btn-primary" style="margin-left:8px;">Auto Schedule</button>
@@ -106,7 +106,7 @@
               <span class="p-ro-val">OR</span>
             </div>
             <div>
-              <label>If Policy is bound, Signed UM/UIM Form Received?</label>
+              <label for="umuimForm">If Policy is bound, Signed UM/UIM Form Received?</label>
               <input type="checkbox" id="umuimForm">
             </div>
           </div>
@@ -164,13 +164,14 @@
             <!-- Override float (left) + checkbox (right) -->
             <div class="p-new-row p-override-row">
               <div id="overriddenWrap" class="p-new-cell" style="display:none;">
-                <label class="p-new-lbl">Overridden Pricing Guidance</label>
+                <label class="p-new-lbl" for="overriddenPricingGuidance">Overridden Pricing Guidance</label>
                 <input type="number" id="overriddenPricingGuidance"
                        step="0.01" min="0" placeholder="0.00"
-                       class="p-override-input">
+                       class="p-override-input"
+                       aria-label="Overridden Pricing Guidance">
               </div>
               <div class="p-new-cell p-checkbox-cell">
-                <label class="p-new-lbl">Does this policy need a Pricing Guidance Override?</label>
+                <label class="p-new-lbl" for="pricingGuidanceOverride">Does this policy need a Pricing Guidance Override?</label>
                 <input type="checkbox" id="pricingGuidanceOverride">
               </div>
             </div>
@@ -258,7 +259,7 @@
         <div class="p-sb-body" id="options">
           <div class="p-sb-options-row">
             <div>
-              <label class="p-sb-inline-lbl">Include Forms</label>
+              <label class="p-sb-inline-lbl" for="includeForms">Include Forms</label>
               <input type="checkbox" id="includeForms" checked>
             </div>
             <button class="btn-primary p-sb-btn-full" style="margin-top:6px;">Policy Forms</button>
