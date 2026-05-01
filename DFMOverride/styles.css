@@ -86,7 +86,6 @@ a:hover { text-decoration: underline; }
 .field-label { font-size: 12px; font-weight: normal; }
 .field-value-text { font-size: 12px; }
 
-.req-label { }
 
 /* Inline label + control on same line */
 .field-inline {
