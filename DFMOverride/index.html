@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>CPP Pricing</title>
+</head>
+<body>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button>Account</button>
+    <button>Account Details</button>
+    <button>Policy Info</button>
+    <button>Policy Covg</button>
+    <button>Location</button>
+    <button>State Details</button>
+    <button>Risk Schedule</button>
+    <button>Driver Schedule</button>
+    <button>Endorsements</button>
+    <button>Manuscript End</button>
+    <button>Add Interests</button>
+    <button class="selected">Pricing</button>
+    <button>Actuarial Factors</button>
+    <button>Risk Analysis</button>
+    <button>Pricing Analysis</button>
+  </div>
+
+  <!-- Secondary Nav -->
+  <div class="secondary-nav">
+    <a href="#">View Policy (QA Test CPP...)</a>
+    <span class="sep">|</span>
+    <a href="#">View Policy Details</a>
+    <span class="sep">|</span>
+    <a href="#">View Client Information</a>
+    <span class="sep">|</span>
+    <a href="#">Save Quote/Policy</a>
+    <span class="sep">|</span>
+    <a href="#">View Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Upload Policy Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Client Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Direct Link</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <h1 class="page-title">Pricing</h1>
+
+    <!-- Policy info row -->
+    <div class="policy-info-row">
+      <span class="policy-name">QA Test CPP Occidental CAT (Quote - New-Pending)</span>
+      <span class="policy-id">QGA73090172</span>
+      <span class="policy-version">Release Version 11.56.2</span>
+    </div>
+
+    <p class="req-note"><span class="req-asterisk">*</span> Indicates a required field</p>
+
+    <!-- Premium -->
+    <div class="field-row">
+      <label class="field-label">Premium</label>
+      <span class="field-value-text">$75,533.00</span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary">Auto Symbols</button>
+    </div>
+
+    <!-- Commission % -->
+    <div class="field-row">
+      <label class="field-label">Commission %</label>
+      <span class="field-value-text">20</span>
+    </div>
+
+    <!-- UM/UIM Acceptance Section -->
+    <div class="section">
+      <div class="section-header section-header-blue" id="umHeader">
+        <span class="collapse-toggle" id="umToggle">&#9660;</span>
+        UM/UIM Acceptance
+      </div>
+      <div class="section-body" id="umBody">
+        <div class="um-row">
+          <div class="um-col-left">
+            <label class="field-label">State</label>
+            <span class="field-value-text">OK</span>
+          </div>
+          <div class="um-col-right">
+            <label class="field-label">If Policy is Issued, Signed UM/UIM Form Received?</label>
+            <input type="checkbox" id="umFormReceived">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collateral Section -->
+    <div class="section">
+      <div class="section-header section-header-gray">
+        Collateral
+      </div>
+      <div class="section-body">
+        <div class="field-inline">
+          <label class="field-label-inline" for="hasCollateral">Do you have Collateral on this Policy</label>
+          <select id="hasCollateral" class="select-sm">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modification Information Section -->
+    <div class="section">
+      <div class="section-header section-header-gray">
+        Modification Information
+      </div>
+      <div class="section-body">
+        <div class="mod-grid">
+          <!-- Scheduled Mod box -->
+          <div class="mod-box">
+            <button class="btn-primary">Scheduled Modification By State</button>
+          </div>
+          <!-- Driver Mod box -->
+          <div class="mod-box">
+            <div class="field-row tight">
+              <label class="field-label">Driver Modification</label>
+              <span class="field-value-text">1.195</span>
+            </div>
+            <button class="btn-primary">Override Driver Mod</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Licensed Producer -->
+    <div class="field-row licensed-producer-row">
+      <label class="field-label req-label" for="licensedProducer">Licensed Producer <span class="req-asterisk">*</span></label>
+      <select id="licensedProducer" class="select-md">
+        <option>SSO GATEAgencyNonPass</option>
+      </select>
+    </div>
+
+    <!-- Action Buttons row -->
+    <div class="btn-row">
+      <button class="btn-primary">Slot Codes</button>
+      <button class="btn-primary">Rating Worksheet</button>
+      <button class="btn-primary">Commission</button>
+    </div>
+
+    <!-- Rating Messages -->
+    <div class="rating-messages" id="ratingMessages">
+      <div class="rating-messages-title">Rating Messages</div>
+      <ul class="rating-list">
+        <li class="msg-blue">All eligible risks were rated using the ISO 2019 Class Plan.</li>
+        <li class="msg-orange">Trucking/Motor Carrier has been selected but no applicable risks have been added to the policy. Please return to the Risk Schedule page to add a risk.</li>
+      </ul>
+    </div>
+
+    <!-- Previous / Next -->
+    <div class="btn-row nav-btn-row">
+      <button class="btn-secondary">Previous</button>
+      <button class="btn-secondary">Next</button>
+    </div>
+
+    <!-- Return / Switch buttons -->
+    <div class="btn-row">
+      <button class="btn-primary">Return To CPP</button>
+      <button class="btn-primary">Return To CPP Pricing</button>
+      <button class="btn-primary">Switch Line</button>
+    </div>
+
+    <!-- Submission Quick Links -->
+    <div class="submission-links-section">
+      <div class="submission-links-header">
+        <span class="submission-links-title">Submission Quick Links</span>
+        <a href="#" class="view-submission-link">&#128269; View Submission</a>
+      </div>
+      <div class="submission-links-body">
+        <div class="quick-links-row">
+          <a href="#">Submission Documents</a>
+          <span class="sep">|</span>
+          <a href="#">Communication Thread</a>
+          <span class="sep">|</span>
+          <a href="#">Internal Communication Thread</a>
+          <span class="sep">|</span>
+          <a href="#">Risk Narrative</a>
+        </div>
+        <div class="related-quotes-row">
+          <label class="field-label-inline" for="relatedQuotes">Related Quotes</label>
+          <select id="relatedQuotes" class="select-lg">
+            <option>QA73093959 - Occidental_Truck/Package - QGA73090172</option>
+          </select>
+          <button class="btn-primary">Jump to Quote</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end main-content -->
+
+  <script src="app.js"></script>
+</body>
+</html>
+‎CPPPricing/styles.css‎
++451
+Lines changed: 451 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+/* ============================================================
+   Base / Reset
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #1b1f24;
+  font-size: 12px;
+}
+
+/* ============================================================
+   Tab Bar
+   ============================================================ */
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 5px 8px;
+  background: #dde3ec;
+  border-bottom: 1px solid #b8c2cf;
+}
+
+.tab-bar button {
+  border: 1px solid #b8c2cf;
+  background: #edf0f5;
+  padding: 4px 9px;
+  border-radius: 2px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #2a3040;
+  white-space: nowrap;
+}
+
+.tab-bar button:hover {
+  background: #fff;
+}
+
+.tab-bar button.selected {
+  background: #fff;
+  border-bottom-color: #fff;
+  font-weight: 700;
+  color: #1b1f24;
+}
+
+/* ============================================================
+   Secondary Nav
+   ============================================================ */
+.secondary-nav {
+  background: #f0f3f7;
+  border-bottom: 1px solid #cdd5de;
+  padding: 4px 10px;
+  font-size: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.secondary-nav a {
+  color: #2352a0;
+  text-decoration: none;
+}
+
+.secondary-nav a:hover {
+  text-decoration: underline;
+}
+
+.secondary-nav .sep {
+  color: #9aa5b4;
+  padding: 0 2px;
+}
+
+/* ============================================================
+   Main Content
+   ============================================================ */
+.main-content {
+  padding: 10px 14px 24px;
+}
+
+/* ============================================================
+   Page Title
+   ============================================================ */
+.page-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px 0 6px;
+}
+
+/* ============================================================
+   Policy Info Row
+   ============================================================ */
+.policy-info-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+  margin-bottom: 6px;
+  color: #2a3040;
+}
+
+.policy-name {
+  font-weight: 400;
+}
+
+.policy-id {
+  color: #2352a0;
+}
+
+.policy-version {
+  margin-left: auto;
+  color: #555;
+}
+
+/* ============================================================
+   Required Note
+   ============================================================ */
+.req-note {
+  font-size: 11px;
+  margin: 4px 0 8px;
+  color: #444;
+}
+
+.req-asterisk {
+  color: #c00000;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Field rows
+   ============================================================ */
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.field-row.tight {
+  margin-bottom: 4px;
+}
+
+.field-label {
+  font-size: 11px;
+  color: #3a4149;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.req-label {
+  min-width: unset;
+}
+
+.field-value-text {
+  font-size: 12px;
+  color: #1b1f24;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.nav-btn-row {
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.btn-primary {
+  background: #3d4178;
+  color: #fff;
+  border: 1px solid #2e3160;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: #4e529a;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #2a3040;
+  border: 1px solid #b8c2cf;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #edf0f5;
+}
+
+/* ============================================================
+   Select inputs
+   ============================================================ */
+select {
+  border: 1px solid #b9c3cd;
+  border-radius: 2px;
+  background: #fff;
+  padding: 4px 6px;
+  font-size: 11px;
+  color: #1b1f24;
+  cursor: pointer;
+}
+
+.select-sm  { width: 80px; }
+.select-md  { width: 180px; }
+.select-lg  { width: 320px; }
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.section {
+  border: 1px solid #cdd5de;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-header-blue {
+  background: #dde8f7;
+  border-bottom: 1px solid #b8caec;
+  color: #1a2a4a;
+}
+
+.section-header-gray {
+  background: #e6eaf0;
+  border-bottom: 1px solid #cdd5de;
+  color: #2a3040;
+  cursor: default;
+}
+
+.collapse-toggle {
+  font-size: 10px;
+  color: #555;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.collapse-toggle.collapsed {
+  transform: rotate(-90deg);
+}
+
+.section-body {
+  padding: 10px 12px;
+}
+
+/* ============================================================
+   UM/UIM Section body
+   ============================================================ */
+.um-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.um-col-left {
+  min-width: 60px;
+}
+
+.um-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.um-col-right input[type="checkbox"] {
+  width: auto;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   Collateral Section
+   ============================================================ */
+.field-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-label-inline {
+  font-size: 11px;
+  color: #3a4149;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Modification Information
+   ============================================================ */
+.mod-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mod-box {
+  border: 1px solid #cdd5de;
+  padding: 10px 12px;
+  border-radius: 2px;
+  background: #fafbfc;
+  min-width: 200px;
+}
+
+/* ============================================================
+   Licensed Producer row
+   ============================================================ */
+.licensed-producer-row {
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   Rating Messages
+   ============================================================ */
+.rating-messages {
+  border: 1px solid #e57373;
+  background: #fff5f5;
+  border-radius: 3px;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+.rating-messages-title {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #2a3040;
+}
+
+.rating-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rating-list li {
+  font-size: 11px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #1b1f24;
+}
+
+.rating-list li::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.msg-blue::before  { background: #2352a0; }
+.msg-orange::before { background: #e08030; }
+
+/* ============================================================
+   Submission Quick Links
+   ============================================================ */
+.submission-links-section {
+  border: 1px dashed #b8c2cf;
+  border-radius: 3px;
+  margin-top: 14px;
+  background: #fff;
+}
+
+.submission-links-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #b8c2cf;
+}
+
+.submission-links-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2a3040;
+}
+
+.view-submission-link {
+  font-size: 11px;
+  color: #2352a0;
+  text-decoration: none;
+}
+
+.view-submission-link:hover {
+  text-decoration: underline;
+}
+
+.submission-links-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.quick-links-row a {
+  color: #2352a0;
+  text-decoration: none;
+}
+
+.quick-links-row a:hover {
+  text-decoration: underline;
+}
+
+.quick-links-row .sep {
+  color: #9aa5b4;
+}
+
+.related-quotes-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
