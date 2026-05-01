@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>CPP Pricing</title>
+</head>
+<body>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button>Account</button>
+    <button>Account Details</button>
+    <button>Policy Info</button>
+    <button>Policy Covg</button>
+    <button>Location</button>
+    <button>State Details</button>
+    <button>Risk Schedule</button>
+    <button>Driver Schedule</button>
+    <button>Endorsements</button>
+    <button>Manuscript End</button>
+    <button>Add Interests</button>
+    <button class="selected">Pricing</button>
+    <button>Actuarial Factors</button>
+    <button>Risk Analysis</button>
+    <button>Pricing Analysis</button>
+  </div>
+
+  <!-- Secondary Nav -->
+  <div class="secondary-nav">
+    <a href="#">View Policy (QA Test CPP...)</a>
+    <span class="sep">|</span>
+    <a href="#">View Policy Details</a>
+    <span class="sep">|</span>
+    <a href="#">View Client Information</a>
+    <span class="sep">|</span>
+    <a href="#">Save Quote/Policy</a>
+    <span class="sep">|</span>
+    <a href="#">View Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Upload Policy Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Client Documents</a>
+    <span class="sep">|</span>
+    <a href="#">Direct Link</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <h1 class="page-title">Pricing</h1>
+
+    <!-- Policy info row -->
+    <div class="policy-info-row">
+      <span class="policy-name">QA Test CPP Occidental CAT (Quote - New-Pending)</span>
+      <span class="policy-id">QGA73090172</span>
+      <span class="policy-version">Release Version 11.56.2</span>
+    </div>
+
+    <p class="req-note"><span class="req-asterisk">*</span> Indicates a required field</p>
+
+    <!-- Premium -->
+    <div class="field-row">
+      <label class="field-label">Premium</label>
+      <span class="field-value-text">$75,533.00</span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary">Auto Symbols</button>
+    </div>
+
+    <!-- Commission % -->
+    <div class="field-row">
+      <label class="field-label">Commission %</label>
+      <span class="field-value-text">20</span>
+    </div>
+
+    <!-- UM/UIM Acceptance Section -->
+    <div class="section">
+      <div class="section-header section-header-blue" id="umHeader">
+        <span class="collapse-toggle" id="umToggle">&#9660;</span>
+        UM/UIM Acceptance
+      </div>
+      <div class="section-body" id="umBody">
+        <div class="um-row">
+          <div class="um-col-left">
+            <label class="field-label">State</label>
+            <span class="field-value-text">OK</span>
+          </div>
+          <div class="um-col-right">
+            <label class="field-label">If Policy is Issued, Signed UM/UIM Form Received?</label>
+            <input type="checkbox" id="umFormReceived">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collateral Section -->
+    <div class="section">
+      <div class="section-header section-header-gray">
+        Collateral
+      </div>
+      <div class="section-body">
+        <div class="field-inline">
+          <label class="field-label-inline" for="hasCollateral">Do you have Collateral on this Policy</label>
+          <select id="hasCollateral" class="select-sm">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modification Information Section -->
+    <div class="section">
+      <div class="section-header section-header-gray">
+        Modification Information
+      </div>
+      <div class="section-body">
+        <div class="mod-grid">
+          <!-- Scheduled Mod box -->
+          <div class="mod-box">
+            <button class="btn-primary">Scheduled Modification By State</button>
+          </div>
+          <!-- Driver Mod box -->
+          <div class="mod-box">
+            <div class="field-row tight">
+              <label class="field-label">Driver Modification</label>
+              <span class="field-value-text">1.195</span>
+            </div>
+            <button class="btn-primary">Override Driver Mod</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Licensed Producer -->
+    <div class="field-row licensed-producer-row">
+      <label class="field-label req-label" for="licensedProducer">Licensed Producer <span class="req-asterisk">*</span></label>
+      <select id="licensedProducer" class="select-md">
+        <option>SSO GATEAgencyNonPass</option>
+      </select>
+    </div>
+
+    <!-- Action Buttons row -->
+    <div class="btn-row">
+      <button class="btn-primary">Slot Codes</button>
+      <button class="btn-primary">Rating Worksheet</button>
+      <button class="btn-primary">Commission</button>
+    </div>
+
+    <!-- Rating Messages -->
+    <div class="rating-messages" id="ratingMessages">
+      <div class="rating-messages-title">Rating Messages</div>
+      <ul class="rating-list">
+        <li class="msg-blue">All eligible risks were rated using the ISO 2019 Class Plan.</li>
+        <li class="msg-orange">Trucking/Motor Carrier has been selected but no applicable risks have been added to the policy. Please return to the Risk Schedule page to add a risk.</li>
+      </ul>
+    </div>
+
+    <!-- Previous / Next -->
+    <div class="btn-row nav-btn-row">
+      <button class="btn-secondary">Previous</button>
+      <button class="btn-secondary">Next</button>
+    </div>
+
+    <!-- Return / Switch buttons -->
+    <div class="btn-row">
+      <button class="btn-primary">Return To CPP</button>
+      <button class="btn-primary">Return To CPP Pricing</button>
+      <button class="btn-primary">Switch Line</button>
+    </div>
+
+    <!-- Submission Quick Links -->
+    <div class="submission-links-section">
+      <div class="submission-links-header">
+        <span class="submission-links-title">Submission Quick Links</span>
+        <a href="#" class="view-submission-link">&#128269; View Submission</a>
+      </div>
+      <div class="submission-links-body">
+        <div class="quick-links-row">
+          <a href="#">Submission Documents</a>
+          <span class="sep">|</span>
+          <a href="#">Communication Thread</a>
+          <span class="sep">|</span>
+          <a href="#">Internal Communication Thread</a>
+          <span class="sep">|</span>
+          <a href="#">Risk Narrative</a>
+        </div>
+        <div class="related-quotes-row">
+          <label class="field-label-inline" for="relatedQuotes">Related Quotes</label>
+          <select id="relatedQuotes" class="select-lg">
+            <option>QA73093959 - Occidental_Truck/Package - QGA73090172</option>
+          </select>
+          <button class="btn-primary">Jump to Quote</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end main-content -->
+
+  <script src="app.js"></script>
+</body>
+</html>
