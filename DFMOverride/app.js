@@ -11,4 +11,14 @@
       umToggle.classList.toggle("collapsed", !collapsed);
     });
   }
+
+  // Show/hide "Override Recommended Scheduled Mod" based on pricing guidance dropdown
+  var overridePricingGuidance = document.getElementById("overridePricingGuidance");
+  var overrideSchedModRow     = document.getElementById("overrideSchedModRow");
+
+  if (overridePricingGuidance && overrideSchedModRow) {
+    overridePricingGuidance.addEventListener("change", function () {
+      overrideSchedModRow.style.display = this.value === "Yes" ? "" : "none";
+    });
+  }
 })();
