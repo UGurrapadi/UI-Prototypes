@@ -129,7 +129,7 @@
           <div class="mod-box">
             <div class="field-row tight">
               <label class="field-label">Recommended Scheduled Mod</label>
-              <input type="text" class="input-float" id="recommendedSchedMod" value="1.38" readonly>
+              <input type="number" class="input-float" id="recommendedSchedMod" value="1.38" step="0.001" readonly>
             </div>
             <div class="field-row tight">
               <label class="field-label" for="overridePricingGuidance">Do you want to override recommended pricing guidance?</label>
@@ -140,7 +140,7 @@
             </div>
             <div class="field-row tight" id="overrideSchedModRow" style="display:none;">
               <label class="field-label" for="overrideSchedMod">Override Recommended Scheduled Mod</label>
-              <input type="text" class="input-float" id="overrideSchedMod" value="1.000">
+              <input type="number" class="input-float" id="overrideSchedMod" value="1.000" step="0.001" min="0">
             </div>
           </div>
 
