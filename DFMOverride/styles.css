@@ -1,205 +1,253 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>CPP Pricing</title>
-</head>
-<body>
+/* ── Reset / Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Tab Bar -->
-  <div class="tab-bar">
-    <button>Account</button>
-    <button>Account Details</button>
-    <button>Policy Info</button>
-    <button>Policy Covg</button>
-    <button>Location</button>
-    <button>State Details</button>
-    <button>Risk Schedule</button>
-    <button>Driver Schedule</button>
-    <button>Endorsements</button>
-    <button>Manuscript End</button>
-    <button>Add Interests</button>
-    <button class="selected">Pricing</button>
-    <button>Actuarial Factors</button>
-    <button>Risk Analysis</button>
-    <button>Pricing Analysis</button>
-  </div>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+}
 
-  <!-- Secondary Nav -->
-  <div class="secondary-nav">
-    <a href="#">View Policy (QA Test CPP...)</a>
-    <span class="sep">|</span>
-    <a href="#">View Policy Details</a>
-    <span class="sep">|</span>
-    <a href="#">View Client Information</a>
-    <span class="sep">|</span>
-    <a href="#">Save Quote/Policy</a>
-    <span class="sep">|</span>
-    <a href="#">View Documents</a>
-    <span class="sep">|</span>
-    <a href="#">Upload Policy Documents</a>
-    <span class="sep">|</span>
-    <a href="#">Client Documents</a>
-    <span class="sep">|</span>
-    <a href="#">Direct Link</a>
-  </div>
+a { color: #00f; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-  <!-- Main Content -->
-  <div class="main-content">
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 4px 0;
+}
 
-    <h1 class="page-title">Pricing</h1>
+.tab-bar button {
+  font-size: 11px;
+  padding: 3px 8px;
+  margin: 2px 2px 0;
+  border: 1px solid #999;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 3px 3px 0 0;
+  color: #000;
+}
 
-    <!-- Policy info row -->
-    <div class="policy-info-row">
-      <span class="policy-name">QA Test CPP Occidental CAT (Quote - New-Pending)</span>
-      <span class="policy-id">QGA73090172</span>
-      <span class="policy-version">Release Version 11.56.2</span>
-    </div>
+.tab-bar button.selected {
+  background: #fff;
+  border-bottom-color: #fff;
+  font-weight: bold;
+  border-top: 2px solid #555;
+}
 
-    <p class="req-note"><span class="req-asterisk">*</span> Indicates a required field</p>
+/* ── Secondary Nav ── */
+.secondary-nav {
+  padding: 3px 8px;
+  font-size: 11px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
 
-    <!-- Premium -->
-    <div class="field-row">
-      <label class="field-label">Premium</label>
-      <span class="field-value-text">$75,533.00</span>
-    </div>
+.secondary-nav a { color: #00c; font-size: 11px; }
+.sep { color: #000; margin: 0 3px; }
 
-    <div class="btn-row">
-      <button class="btn-primary">Auto Symbols</button>
-    </div>
+/* ── Main Content ── */
+.main-content {
+  padding: 10px 16px 24px;
+  max-width: 1100px;
+}
 
-    <!-- Commission % -->
-    <div class="field-row">
-      <label class="field-label">Commission %</label>
-      <span class="field-value-text">20</span>
-    </div>
+/* ── Page Title ── */
+.page-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
 
-    <!-- UM/UIM Acceptance Section -->
-    <div class="section">
-      <div class="section-header section-header-blue" id="umHeader">
-        <span class="collapse-toggle" id="umToggle">&#9660;</span>
-        UM/UIM Acceptance
-      </div>
-      <div class="section-body" id="umBody">
-        <div class="um-row">
-          <div class="um-col-left">
-            <label class="field-label">State</label>
-            <span class="field-value-text">OK</span>
-          </div>
-          <div class="um-col-right">
-            <label class="field-label">If Policy is Issued, Signed UM/UIM Form Received?</label>
-            <input type="checkbox" id="umFormReceived">
-          </div>
-        </div>
-      </div>
-    </div>
+/* ── Policy Info Row ── */
+.policy-info-row {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.policy-id  { margin-left: 6px; }
+.policy-version { margin-left: 6px; }
 
-    <!-- Collateral Section -->
-    <div class="section">
-      <div class="section-header section-header-gray">
-        Collateral
-      </div>
-      <div class="section-body">
-        <div class="field-inline">
-          <label class="field-label-inline" for="hasCollateral">Do you have Collateral on this Policy</label>
-          <select id="hasCollateral" class="select-sm">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
-      </div>
-    </div>
+/* ── Required Note ── */
+.req-note { font-size: 11px; margin-bottom: 8px; }
+.req-asterisk { color: red; }
 
-    <!-- Modification Information Section -->
-    <div class="section">
-      <div class="section-header section-header-gray">
-        Modification Information
-      </div>
-      <div class="section-body">
-        <div class="mod-grid">
-          <!-- Scheduled Mod box -->
-          <div class="mod-box">
-            <button class="btn-primary">Scheduled Modification By State</button>
-          </div>
-          <!-- Driver Mod box -->
-          <div class="mod-box">
-            <div class="field-row tight">
-              <label class="field-label">Driver Modification</label>
-              <span class="field-value-text">1.195</span>
-            </div>
-            <button class="btn-primary">Override Driver Mod</button>
-          </div>
-        </div>
-      </div>
-    </div>
+/* ── Field Rows ── */
+.field-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.field-row.tight { margin-bottom: 4px; }
 
-    <!-- Licensed Producer -->
-    <div class="field-row licensed-producer-row">
-      <label class="field-label req-label" for="licensedProducer">Licensed Producer <span class="req-asterisk">*</span></label>
-      <select id="licensedProducer" class="select-md">
-        <option>SSO GATEAgencyNonPass</option>
-      </select>
-    </div>
+.field-label { font-size: 12px; font-weight: normal; }
+.field-value-text { font-size: 12px; }
 
-    <!-- Action Buttons row -->
-    <div class="btn-row">
-      <button class="btn-primary">Slot Codes</button>
-      <button class="btn-primary">Rating Worksheet</button>
-      <button class="btn-primary">Commission</button>
-    </div>
+.req-label { }
 
-    <!-- Rating Messages -->
-    <div class="rating-messages" id="ratingMessages">
-      <div class="rating-messages-title">Rating Messages</div>
-      <ul class="rating-list">
-        <li class="msg-blue">All eligible risks were rated using the ISO 2019 Class Plan.</li>
-        <li class="msg-orange">Trucking/Motor Carrier has been selected but no applicable risks have been added to the policy. Please return to the Risk Schedule page to add a risk.</li>
-      </ul>
-    </div>
+/* Inline label + control on same line */
+.field-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.field-label-inline { font-size: 12px; }
 
-    <!-- Previous / Next -->
-    <div class="btn-row nav-btn-row">
-      <button class="btn-secondary">Previous</button>
-      <button class="btn-secondary">Next</button>
-    </div>
+/* ── Buttons ── */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
 
-    <!-- Return / Switch buttons -->
-    <div class="btn-row">
-      <button class="btn-primary">Return To CPP</button>
-      <button class="btn-primary">Return To CPP Pricing</button>
-      <button class="btn-primary">Switch Line</button>
-    </div>
+.btn-primary {
+  background: #3d3d7a;
+  color: #fff;
+  border: 1px solid #2a2a5a;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn-primary:hover { background: #2a2a5a; }
 
-    <!-- Submission Quick Links -->
-    <div class="submission-links-section">
-      <div class="submission-links-header">
-        <span class="submission-links-title">Submission Quick Links</span>
-        <a href="#" class="view-submission-link">&#128269; View Submission</a>
-      </div>
-      <div class="submission-links-body">
-        <div class="quick-links-row">
-          <a href="#">Submission Documents</a>
-          <span class="sep">|</span>
-          <a href="#">Communication Thread</a>
-          <span class="sep">|</span>
-          <a href="#">Internal Communication Thread</a>
-          <span class="sep">|</span>
-          <a href="#">Risk Narrative</a>
-        </div>
-        <div class="related-quotes-row">
-          <label class="field-label-inline" for="relatedQuotes">Related Quotes</label>
-          <select id="relatedQuotes" class="select-lg">
-            <option>QA73093959 - Occidental_Truck/Package - QGA73090172</option>
-          </select>
-          <button class="btn-primary">Jump to Quote</button>
-        </div>
-      </div>
-    </div>
+.btn-secondary {
+  background: #e8e8e8;
+  color: #000;
+  border: 1px solid #999;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn-secondary:hover { background: #d0d0d0; }
 
-  </div><!-- end main-content -->
+/* ── Selects ── */
+.select-sm  { font-size: 11px; padding: 2px 4px; width: 80px; }
+.select-md  { font-size: 11px; padding: 2px 4px; width: 160px; }
+.select-lg  { font-size: 11px; padding: 2px 4px; width: 280px; }
 
-  <script src="app.js"></script>
-</body>
-</html>
+/* ── Sections ── */
+.section { margin-bottom: 10px; }
+
+.section-header {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-header-blue {
+  background: #c5cfe8;
+  border: 1px solid #9aaad4;
+  color: #1a1a6e;
+}
+
+.section-header-gray {
+  background: #d8d8d8;
+  border: 1px solid #b0b0b0;
+  color: #000;
+}
+
+.section-body {
+  border: 1px solid #d0d0d0;
+  border-top: none;
+  padding: 8px;
+  background: #fff;
+}
+
+.collapse-toggle { font-size: 10px; }
+.collapse-toggle.collapsed { transform: rotate(-90deg); display: inline-block; }
+
+/* ── UM/UIM two-column layout ── */
+.um-row { display: flex; gap: 40px; }
+.um-col-left { min-width: 100px; }
+.um-col-right { }
+
+/* ── Modification Grid ── */
+.mod-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mod-box {
+  border: 1px solid #ccc;
+  padding: 8px;
+  min-width: 200px;
+  background: #fff;
+}
+
+/* ── Licensed Producer row ── */
+.licensed-producer-row {
+  margin-bottom: 8px;
+}
+
+/* ── Rating Messages ── */
+.rating-messages {
+  border: 2px solid #e00;
+  background: #fff5f5;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.rating-messages-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.rating-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.rating-list li {
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.msg-blue   { color: #0000cc; }
+.msg-orange { color: #cc5500; }
+
+/* ── Nav button row spacing ── */
+.nav-btn-row { margin-bottom: 6px; }
+
+/* ── Submission Quick Links ── */
+.submission-links-section {
+  border-top: 1px dashed #999;
+  padding-top: 6px;
+  margin-top: 8px;
+}
+
+.submission-links-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.submission-links-title { font-size: 12px; font-weight: bold; }
+
+.view-submission-link { font-size: 11px; color: #00c; }
+
+.quick-links-row {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.related-quotes-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
