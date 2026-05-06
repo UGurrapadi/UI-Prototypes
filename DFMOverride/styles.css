@@ -200,6 +200,14 @@ a:hover { text-decoration: underline; }
   cursor: default;
 }
 
+/* ── Pricing guidance top row: 1.a and 1.b side by side ── */
+.pricing-guidance-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
 /* ── Licensed Producer row ── */
 .licensed-producer-row {
   margin-bottom: 8px;
