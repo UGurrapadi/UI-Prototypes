@@ -1,7 +1,7 @@
 (function () {
   const uwReviewFlag = document.getElementById("uwReviewFlag");
-  const justificationRow = document.getElementById("justificationRow");
-  const justification = document.getElementById("justification");
+  const reasonRow = document.getElementById("reasonRow");
+  const reason = document.getElementById("reason");
 
   const pleaseSpecifyRow = document.getElementById("pleaseSpecifyRow");
   const pleaseSpecify = document.getElementById("pleaseSpecify");
@@ -11,7 +11,7 @@
   const expirationDate = document.getElementById("expirationDate");
 
   const uwRow = document.getElementById("uwReviewRow");
-  const justificationAsterisk = document.getElementById("justificationAsterisk");
+  const reasonAsterisk = document.getElementById("reasonAsterisk");
 
   function toInputDate(d) {
     const yyyy = d.getFullYear();
@@ -32,10 +32,10 @@
   }
 
   function syncOtherSpecify() {
-    // Only relevant when justification is visible (UW Review = Yes)
-    const justificationValue = (justification.value || "").toLowerCase();
-    const justificationVisible = justificationRow.style.display !== "none";
-    const show = justificationVisible && justificationValue === "other";
+    // Only relevant when reason is visible (UW Review = Yes)
+    const reasonValue = (reason.value || "").toLowerCase();
+    const reasonVisible = reasonRow.style.display !== "none";
+    const show = reasonVisible && reasonValue === "other";
 
     pleaseSpecifyRow.style.display = show ? "" : "none";
     pleaseSpecify.required = show;
@@ -44,7 +44,7 @@
       pleaseSpecifyAsterisk.style.display = show ? "" : "none";
     }
 
-    // Same attention/highlight behavior as Justification (only when shown)
+    // Same attention/highlight behavior as reason (only when shown)
     pleaseSpecifyRow.classList.toggle("attention", show);
 
     // Clear when hiding
@@ -54,8 +54,8 @@
   function syncUWFields() {
     const isYes = (uwReviewFlag.value || "").toLowerCase() === "yes";
 
-    // show/hide justification
-    justificationRow.style.display = isYes ? "" : "none";
+    // show/hide reason
+    reasonRow.style.display = isYes ? "" : "none";
 
     // required only when visible
     justification.required = isYes;
