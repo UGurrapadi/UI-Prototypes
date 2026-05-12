@@ -31,25 +31,20 @@
     expirationDate.value = addOneYear(effectiveDate.value);
   }
 
-  function syncOtherSpecify() {
-    // Only relevant when reason is visible (UW Review = Yes)
-    const reasonValue = (reason.value || "").toLowerCase();
-    const reasonVisible = reasonRow.style.display !== "none";
-    const show = reasonVisible && reasonValue === "other";
+function syncOtherSpecify() {
+  const isYes = (uwReviewFlag.value || "").toLowerCase() === "yes";
 
-    pleaseSpecifyRow.style.display = show ? "" : "none";
-    pleaseSpecify.required = show;
+  pleaseSpecifyRow.style.display = isYes ? "" : "none";
+  pleaseSpecify.required = isYes;
 
-    if (pleaseSpecifyAsterisk) {
-      pleaseSpecifyAsterisk.style.display = show ? "" : "none";
-    }
-
-    // Same attention/highlight behavior as reason (only when shown)
-    pleaseSpecifyRow.classList.toggle("attention", show);
-
-    // Clear when hiding
-    if (!show) pleaseSpecify.value = "";
+  if (pleaseSpecifyAsterisk) {
+    pleaseSpecifyAsterisk.style.display = isYes ? "" : "none";
   }
+
+  pleaseSpecifyRow.classList.toggle("attention", isYes);
+
+  if (!isYes) pleaseSpecify.value = "";
+}
 
   function syncUWFields() {
     const isYes = (uwReviewFlag.value || "").toLowerCase() === "yes";
@@ -58,20 +53,20 @@
     reasonRow.style.display = isYes ? "" : "none";
 
     // required only when visible
-    justification.required = isYes;
+    reason.required = isYes;
 
     // asterisk only when visible
-    if (justificationAsterisk) {
-      justificationAsterisk.style.display = isYes ? "" : "none";
+    if (reasonAsterisk) {
+      reasonAsterisk.style.display = isYes ? "" : "none";
     }
 
     // highlight handling
     if (uwRow) uwRow.classList.toggle("attention", true);
-    justificationRow.classList.toggle("attention", isYes);
+    reasonRow.classList.toggle("attention", isYes);
 
     // clear when hiding
     if (!isYes) {
-      justification.value = "";
+      reason.value = "";
 
       // also reset the "Other" follow-up field
       pleaseSpecifyRow.style.display = "none";
@@ -90,7 +85,6 @@
 
   // events
   uwReviewFlag.addEventListener("change", syncUWFields);
-  justification.addEventListener("change", syncOtherSpecify);
   effectiveDate.addEventListener("change", syncExpirationDate);
 
   // initial sync
